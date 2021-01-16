@@ -17,9 +17,12 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 (function() {
   var RSMQ, app, express, rsmq;
 
+  const HOST = process.env.HOST || "127.0.0.1";
+  const PORT = process.env.PORT || 6379;
+
   RSMQ = require("rsmq");
 
-  rsmq = new RSMQ();
+  rsmq = new RSMQ({host: HOST, port: PORT});
 
   express = require('express');
 
