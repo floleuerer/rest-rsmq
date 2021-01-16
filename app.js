@@ -17,12 +17,13 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 (function() {
   var RSMQ, app, express, rsmq;
 
-  const HOST = process.env.HOST || "127.0.0.1";
-  const PORT = process.env.PORT || 6379;
+  const REDIS_HOST = process.env.HOST || "127.0.0.1";
+  const REDIS_PORT = process.env.PORT || 6379;
+  console.log("redis host " + REDIS_HOST + " port " + REDIS_PORT)
 
   RSMQ = require("rsmq");
 
-  rsmq = new RSMQ({host: HOST, port: PORT});
+  rsmq = new RSMQ({host: REDIS_HOST, port: REDIS_PORT});
 
   express = require('express');
 
